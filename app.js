@@ -2,12 +2,7 @@ function addBook() {
     const bookTitle = document.getElementById('title').value;
     const bookAuthor = document.getElementById('author').value;
     const bookIsbn = document.getElementById('isbn').value;
-    let btn = document.createElement('button');
-    btn.innerHTML = 'X';
-    btn.addEventListener('click', function() {
-        console.log('del');
-    }, false);
-
+    
 
     const bookTable = document.getElementById('bTable');
     let row = bookTable.insertRow(-1);
@@ -16,6 +11,11 @@ function addBook() {
     let cell3 = row.insertCell(2);
     let cell4 = row.insertCell(3);
 
+    let btn = document.createElement('button');
+    btn.innerHTML = 'X';
+    btn.addEventListener('click', function() {
+        cell1.parentElement.remove();
+    }, false);
 
     cell1.innerHTML = bookTitle;
     cell2.innerHTML = bookAuthor;
